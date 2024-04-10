@@ -13,11 +13,14 @@ public class Bus extends Car {
     }
 
     public void passengerExit(int count) {
-        if (passengerCount - count >= 0) {
-            passengerCount -= count;
+        if ((this.passengerCount - passengerCount) >= 0) {
+            this.passengerCount -= passengerCount;
         } else {
             passengerCount = 0;
         }
+    }
+    public int getPassengers() {
+        return passengerCount;
     }
 
     @Override

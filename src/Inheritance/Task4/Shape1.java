@@ -1,7 +1,7 @@
 package Inheritance.Task4;
 
-public class Shape1 {
-    private String color;
+public abstract class Shape1 {
+    protected String color;
     public double calculateArea() {
         return 0;
     }

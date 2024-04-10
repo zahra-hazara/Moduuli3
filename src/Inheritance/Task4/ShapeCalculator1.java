@@ -16,7 +16,7 @@ public class ShapeCalculator1 {
             // Checking the type of shape and printing its area and color
             if (shape instanceof Circle1) {
                 Circle1 circle1 = (Circle1) shape;
-                System.out.printf("Area of Circle with radius %.1f: %.2f, Color: %s\n", circle1.getRadius(), circle1.calculateArea(), circle1.getColor());
+                System.out.printf("Area of Circle with radius %.1f: %.18f, Color: %s\n", circle1.getRadius(), circle1.calculateArea(), circle1.getColor());
             } else if (shape instanceof Rectangle1) {
                 Rectangle1 rectangle1 = (Rectangle1) shape;
                 System.out.printf("Area of Rectangle with width %.1f and height %.1f: %.1f, Color: %s\n", rectangle1.getWidth(), rectangle1.getHeight(), rectangle1.calculateArea(), rectangle1.getColor());

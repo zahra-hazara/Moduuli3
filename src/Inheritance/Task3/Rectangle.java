@@ -13,7 +13,6 @@ public class Rectangle extends Shape {
     public double calculateArea() {
         return width * height;
     }
-    //getter
 
     public double getHeight() {
         return height;
