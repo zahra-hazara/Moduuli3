@@ -6,6 +6,7 @@ import java.util.List;
 import StaticAssignment.Library.model.Book;
 import StaticAssignment.Library.model.LibraryMember;
 
+
 public class Library {
     private List<Book> books;
     private List<LibraryMember> members;
@@ -25,7 +26,6 @@ public class Library {
 
     public void borrowBook(LibraryMember member, Book book) {
         if (books.contains(book)) {
-            member.borrowBook(book);
             books.remove(book);
             System.out.println("Book '" + book.getTitle() + "' borrowed by " + member.getName());
         } else {
@@ -34,16 +34,15 @@ public class Library {
     }
 
     public void returnBook(LibraryMember member, Book book) {
-        member.returnBook(book);
         books.add(book);
         System.out.println("Book '" + book.getTitle() + "' returned by " + member.getName());
     }
 
-    public Book[] getBooks() {
-        return books.toArray(new Book[0]);
+    public List<Book> getBooks() {
+        return books;
     }
 
-    public LibraryMember[] getMembers() {
-        return members.toArray(new LibraryMember[0]);
+    public List<LibraryMember> getMembers() {
+        return members;
     }
 }
