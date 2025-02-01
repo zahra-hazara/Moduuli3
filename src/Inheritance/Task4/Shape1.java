@@ -1,19 +1,22 @@
 package Inheritance.Task4;
+public class Shape1 {
+    private String color;
 
-public abstract class Shape1 {
-    protected String color;
-    public double calculateArea() {
-        return 0;
-    }
     public Shape1(String color) {
         this.color = color;
+    }
+
+    public double calculateArea() {
+        return 0; // Default implementation
     }
 
     public String getColor() {
         return color;
     }
 
+    @Override
     public String toString() {
-        return super.toString() + " (Color: " + color + ")";
+        return "Shape of color " + color;
     }
 }
+

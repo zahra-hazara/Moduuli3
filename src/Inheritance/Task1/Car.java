@@ -1,32 +1,52 @@
 package Inheritance.Task1;
-
 public class Car {
-    String make;
-    String model;
-    int year;
-    int speed;
+    private double speed;
+    private double gasolineLevel;
+    private String typeName;
 
-    public Car(String make, String model, int year) {
-        this.make = make;
-        this.model = model;
-        this.year = year;
-        this.speed = 0;
+    public Car(String typeName) {
+        this.typeName = typeName;
+        speed = 0;
+        gasolineLevel = 0;
     }
 
-    public void accelerate(int acceleration) {
-        speed += acceleration;
-    }
-
-    public void decelerate(int deceleration) {
-        if (speed - deceleration >= 0) {
-            speed -= deceleration;
+    public void accelerate() {
+        if (gasolineLevel > 0) {
+            speed += 10;
+            useGasoline(1); // Use 1 unit of gasoline
         } else {
             speed = 0;
         }
     }
 
-    @Override
-    public String toString() {
-        return year + " " + make + " " + model + " with current speed " + speed + " mph";
+    void decelerate(int amount) {
+        if (gasolineLevel > 0) {
+            if (amount > 0) {
+                speed = Math.max(0, speed - amount);
+                useGasoline(0.5); // Use 0.5 units for deceleration
+            }
+        } else {
+            speed = 0;
+        }
+    }
+
+    protected void useGasoline(double amount) {
+        gasolineLevel = Math.max(0, gasolineLevel - amount);
+    }
+
+    public void fillTank() {
+        gasolineLevel = 100; // Fill the tank to full
+    }
+
+    public double getSpeed() {
+        return speed;
+    }
+
+    public String getTypeName() {
+        return typeName;
+    }
+
+    public double getGasolineLevel() {
+        return gasolineLevel;
     }
 }

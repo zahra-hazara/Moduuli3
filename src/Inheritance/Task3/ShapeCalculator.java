@@ -4,9 +4,9 @@ public class ShapeCalculator {
     public static void main(String[] args) {
         //Shape-olioiden taulukon luominen
         Shape[] shapes = new Shape[]{
-                 new Circle(5.0),
-               new Rectangle(4.0, 6.0),
-                 new Triangle(3.0, 8.0)
+                new Circle(5.0),
+                new Rectangle(4.0, 6.0),
+                new Triangle(3.0, 8.0)
         };
         //Tulostetaan otsikko
         System.out.println("Shape Calculator\n");

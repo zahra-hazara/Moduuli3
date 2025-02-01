@@ -2,23 +2,20 @@ package Inheritance.Task2;
 
 public class Main {
     public static void main(String[] args) {
-        // Creating a new Bus object
-        Bus myBus = new Bus("Toyota", "Coaster", 2020);
+        Bus bus = new Bus("City Bus", 50);
+        bus.fillTank();
 
-        // Adding passengers
-        myBus.passengerEnter(10);
+        // Simulate passengers entering and exiting
+        bus.passengerEnter();
+        bus.passengerEnter();
+        System.out.println("Current passengers: " + bus.getPassengerCount());
 
-        // Printing out the current passenger count
-        System.out.println("Passenger count: " + myBus.getPassengers());
+        bus.passengerExit();
+        System.out.println("Current passengers after exit: " + bus.getPassengerCount());
 
-        // Exiting some passengers
-        myBus.passengerExit(5);
-
-        // Printing out the updated passenger count
-        System.out.println("Passenger count after exiting: " + myBus.getPassengers());
-
-        // Printing out the bus details
-        System.out.println(myBus);
+        // Accelerate the bus
+        bus.accelerate();
+        System.out.println("Bus Speed: " + bus.getSpeed() + ", Gasoline Level: " + bus.getGasolineLevel());
     }
 }
 
